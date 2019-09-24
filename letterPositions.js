@@ -7,5 +7,5 @@ const letterPositions = function(sentence) {
   }
   console.log(results);
 };
-letterPositions("four");
+module.exports = letterPositions;
 

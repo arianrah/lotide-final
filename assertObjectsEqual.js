@@ -1,3 +1,11 @@
+const assertObjectsEqual = function(actual, expected) {
+  if (eqObjects(actual, expected)) {
+    console.log(`✅✅✅ Assertion Passed`)
+  } else {
+    console.log(`🛑🛑🛑 Assertion Failed`)
+  }
+}
+
 const eqObjects = function(obj1, obj2) {
   let result;
   let key1 = Object.keys(obj1);
@@ -20,19 +28,6 @@ const eqObjects = function(obj1, obj2) {
   return result;
 };
 
-/*
-const ab = { a: "1", b: "2" };
-const ba = { b: "2", a: "1" };
-eqObjects(ab, ba); // => true
 
-const abc = { a: "1", b: "2", c: "3" };
-eqObjects(ab, abc); // => false
 
-const cd = { c: "1", d: ["2", 3] };
-const dc = { d: ["2", 3], c: "1" };
-eqObjects(cd, dc); // => true
-
-const cd2 = { c: "1", d: ["2", 3, 4] };
-eqObjects(cd, cd2); // => false
-*/
-module.exports = eqObjects;
+module.exports = assertObjectsEqual;
